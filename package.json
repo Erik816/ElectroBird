@@ -1,0 +1,9 @@
+{
+  "name":       "ElectroBird",
+  "version":    "0.1.0",
+  "main":       "main.js",
+  "author":     "Erik Christensen",
+  "scripts": {
+    "start": "electron ."
+  }
+}

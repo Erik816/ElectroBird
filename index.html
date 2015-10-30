@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ElectroBird</title>
+    <meta charset="UTF-8">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="css/photon.css">
+
+    <!-- Javascript -->
+    <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="js/menu.js"></script>
+    <script src="js/colResizable-1.5.min.js"></script>
+    <script src="js/columns.js"></script>
+  </head>
+  <body>
+    <div class="window">
+
+      <!-- Toolbar Header -->
+      <header class="toolbar toolbar-header">
+        <div class="toolbar-actions">
+          <div class="btn-group">
+            <button class="btn btn-default  btn-dropdown">
+              <span class="icon icon-download"></span>
+              <span class="icon-header-text">Get Messages</span>
+            </button>
+            <button class="btn btn-default  btn-dropdown">
+              <span class="icon icon-pencil"></span>
+              <span class="icon-header-text">Write</span>
+            </button>
+            <button class="btn btn-default">
+              <span class="icon icon-chat"></span>
+              <span class="icon-header-text">Chat</span>
+            </button>
+            <button class="btn btn-default">
+              <span class="icon icon-users"></span>
+              <span class="icon-header-text">Address Book</span>
+            </button>
+            <button class="btn btn-default btn-dropdown">
+              <span class="icon icon-tag"></span>
+              <span class="icon-header-text">Tag</span>
+            </button>
+            <button class="btn btn-default">
+              <span class="icon icon-flashlight"></span>
+              <span class="icon-header-text">Quick Filter</span>
+            </button>
+          </div>
+
+          <!-- Elements floated right are listed in reverse order since they build from right -->
+          <button class="btn btn-default pull-right">
+            <span class="icon icon-menu"></span>
+          </button>
+
+          <div class="pull-right">
+            <span class="icon icon-search"></span>
+            <input type="search" placeholder="Search... <Ctrl+K>">
+          </div>
+        </div>
+      </header>
+
+      <!-- Your app's content goes inside .window-content -->
+      <div class="window-content">
+        <div class="pane-group">
+          <div class="pane pane-sm sidebar">
+            <nav class="nav-group">
+
+              <!-- Insert jsTree Content Here -->
+
+              <h5 class="nav-group-title">Erik.Christensen@gmail.com</h5>
+              <span class="nav-group-item">
+                <span class="icon icon-inbox"></span>
+                Inbox
+              </span>
+              <span class="nav-group-item active">
+                <span class="icon icon-doc-text"></span>
+                Drafts
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-suitcase"></span>
+                Sent Mail
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-minus-circled"></span>
+                Spam
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-trash"></span>
+                Trash
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-alert"></span>
+                Important
+              </span>
+              <span class="nav-group-item">
+                <span class="icon icon-star"></span>
+                Starred
+              </span>
+            </nav>
+          </div>
+
+          <div class="pane">
+            <table class="table" id="main-pane">
+              <thead>
+                <tr>
+                  <th>Sort By</th>
+                  <th>Subject</th>
+                  <th>From</th>
+                  <th>Date</th>
+                </tr>
+              </thead>
+              <tbody>
+
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
