@@ -2258,9 +2258,21 @@ td {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 th:last-child,
 td:last-child {
   border-right: 0;
+}
+
+.variable-width {
+  overflow: hidden;
+  width: auto;
+  white-space: nowrap;
+}
+
+.fixed-width {
+  overflow: hidden;
+  width: 20px;
 }
 
 .tab-group {

@@ -7,10 +7,9 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/photon.css">
 
-    <!-- Javascript -->
+    <!-- Javascript Libraries and Scripts-->
     <script>window.$ = window.jQuery = require('jquery');</script>
     <script src="js/menu.js"></script>
-    <script src="js/colResizable-1.5.min.js"></script>
     <script src="js/columns.js"></script>
   </head>
   <body>
@@ -20,34 +19,34 @@
       <header class="toolbar toolbar-header">
         <div class="toolbar-actions">
           <div class="btn-group">
-            <button class="btn btn-default  btn-dropdown">
+            <button class="btn btn-default  btn-dropdown" title="Get new messages">
               <span class="icon icon-download"></span>
               <span class="icon-header-text">Get Messages</span>
             </button>
-            <button class="btn btn-default  btn-dropdown">
+            <button class="btn btn-default  btn-dropdown" title="Create a new message">
               <span class="icon icon-pencil"></span>
               <span class="icon-header-text">Write</span>
             </button>
-            <button class="btn btn-default">
+            <button class="btn btn-default" title="Show the chat tab">
               <span class="icon icon-chat"></span>
               <span class="icon-header-text">Chat</span>
             </button>
-            <button class="btn btn-default">
+            <button class="btn btn-default" title="Go to the address book">
               <span class="icon icon-users"></span>
               <span class="icon-header-text">Address Book</span>
             </button>
-            <button class="btn btn-default btn-dropdown">
+            <button class="btn btn-default btn-dropdown" title="Tag messages">
               <span class="icon icon-tag"></span>
               <span class="icon-header-text">Tag</span>
             </button>
-            <button class="btn btn-default">
+            <button class="btn btn-default" title="Toggle the quick filter bar">
               <span class="icon icon-flashlight"></span>
               <span class="icon-header-text">Quick Filter</span>
             </button>
           </div>
 
           <!-- Elements floated right are listed in reverse order since they build from right -->
-          <button class="btn btn-default pull-right">
+          <button class="btn btn-default pull-right" title="Display the Thunderbird menu">
             <span class="icon icon-menu"></span>
           </button>
 
@@ -99,13 +98,27 @@
           </div>
 
           <div class="pane">
-            <table class="table" id="main-pane">
+            <table class="table tablesorter" id="email-pane">
               <thead>
                 <tr>
-                  <th>Sort By</th>
-                  <th>Subject</th>
-                  <th>From</th>
-                  <th>Date</th>
+                  <th class="fixed-width" title="Display message threads">
+                    <span class="icon icon-flow-cascade"></span>
+                  </th>
+                  <th class="fixed-width" title="Sort by star">
+                    <span class="icon icon-star"></span>
+                  </th>
+                  <th class="fixed-width" title="Sort by attachments">
+                    <span class="icon icon-attach"></span>
+                  </th>
+                  <th class="variable-width" title="Sort by subject">Subject</th>
+                  <th class="fixed-width" title="Sort by read">
+                    <span class="icon icon-eye"></span>
+                  </th>
+                  <th class="variable-width" title="Sort by from">From</th>
+                  <th class="fixed-width" title="Sort by junk status">
+                    <span class="icon icon-minus-circled"></span>
+                  </th>
+                  <th class="variable-width" title="Sort by date">Date</th>
                 </tr>
               </thead>
               <tbody>
