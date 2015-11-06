@@ -1,3 +1,5 @@
+// Tree.js controls the initialization of the sidebar tree using the jsTree module for jQuery, which can be found at https://www.jstree.com/. It is called in index.html
+
 $(document).ready(function () {
   $('#jstree').jstree({
     "core" : {
@@ -5,6 +7,7 @@ $(document).ready(function () {
       "themes" : {
         "dots" : false,
       },
+      // Populating sidebar tree with JSON data. Hard-coded for now, can import using AJAX. See https://www.jstree.com/docs/json/
       "data" : [
         {
           "id" : "account",

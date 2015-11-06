@@ -7,9 +7,14 @@
     <!-- Stylesheets -->
     <link rel="stylesheet" type="text/css" href="css/photon.css">
     <link rel="stylesheet" type="text/css" href="jstree/dist/themes/default/style.min.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="jqGrid/css/ui.jqgrid.css" />
 
     <!-- Javascript Libraries and Scripts-->
     <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="jqGrid/js/jquery.jqGrid.min.js"></script>
+    <script src="jqGrid/js/i18n/grid.locale-en.js"></script>
+
+    </script>
 
   </head>
   <body>
@@ -57,45 +62,22 @@
         </div>
       </header>
 
-      <!-- Your app's content goes inside .window-content -->
+      <!-- Main app content, including sidebar and main email pane -->
       <div class="window-content">
         <div class="pane-group">
           <div class="pane pane-sm sidebar">
 
-            <!-- Sidebar Tree powered by jsTree jQuery plugin -->
+            <!-- Sidebar tree powered by tree.js script -->
             <div id="jstree"></div>
 
           </div>
 
-          <div class="pane">
-            <table class="table tablesorter" id="email-pane">
-              <thead>
-                <tr>
-                  <th class="fixed-width" title="Display message threads">
-                    <span class="icon icon-flow-cascade"></span>
-                  </th>
-                  <th class="fixed-width" title="Sort by star">
-                    <span class="icon icon-star"></span>
-                  </th>
-                  <th class="fixed-width" title="Sort by attachments">
-                    <span class="icon icon-attach"></span>
-                  </th>
-                  <th class="variable-width" title="Sort by subject">Subject</th>
-                  <th class="fixed-width" title="Sort by read">
-                    <span class="icon icon-eye"></span>
-                  </th>
-                  <th class="variable-width" title="Sort by from">From</th>
-                  <th class="fixed-width" title="Sort by junk status">
-                    <span class="icon icon-minus-circled"></span>
-                  </th>
-                  <th class="variable-width" title="Sort by date">Date</th>
-                </tr>
-              </thead>
-              <tbody>
-
-              </tbody>
-            </table>
+          <!-- Main email pane powered by jqGrid -->
+          <div class="pane container-fluid" id="email-pane">
+            <table class="table tablesorter" id="jqGrid"></table>
+            <div id="jqGridPager"></div>
           </div>
+
         </div>
       </div>
     </div>
@@ -103,6 +85,7 @@
     <!-- Load Javascript -->
     <script src="js/tree.js"></script>
     <script src="jstree/dist/jstree.min.js"></script>
+    <script src="js/jqGrid.js"></script>
 
     <!--Unclear if I need this menu script that came with Photon
     <script src="js/menu.js"></script>-->

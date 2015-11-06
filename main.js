@@ -1,3 +1,5 @@
+// Main file to start up and configure Electron, called in package.json.
+
 var app = require('app');  // Module to control application life.
 var BrowserWindow = require('browser-window');  // Module to create native browser window.
 
