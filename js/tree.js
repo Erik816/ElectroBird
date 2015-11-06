@@ -9,6 +9,7 @@ $(document).ready(function () {
         {
           "id" : "account",
           "text" : "Erik.Christensen@gmail.com",
+          "icon" : "icon icon-inbox",
           "state" : {
             opened: true
           },
@@ -16,64 +17,72 @@ $(document).ready(function () {
             {
               "id" : "inbox",
               "text" : "Inbox",
+              "icon" : "icon icon-download",
               "state" : {
                 opened : true
               },
               children : [
                 {
                   "id" : "drafts",
-                  "text" : "Drafts"
+                  "text" : "Drafts",
+                  "icon" : "icon icon-doc-text"
                 },
                 {
                   "id" : "sent-mail",
-                  "text" : "Sent Mail"
-                },
-                {
-                  "id" : "all-mail",
-                  "text" : "All Mail"
+                  "text" : "Sent Mail",
+                  "icon" : "icon icon-suitcase"
                 },
                 {
                   "id" : "spam",
-                  "text" : "Spam"
+                  "text" : "Spam",
+                  "icon" : "icon icon-minus-circled"
                 },
                 {
                   "id" : "trash",
-                  "text" : "Trash"
+                  "text" : "Trash",
+                  "icon" : "icon icon-trash"
                 },
                 {
                   "id" : "important",
-                  "text" : "Important"
+                  "text" : "Important",
+                  "icon" : "icon icon-alert"
                 },
                 {
                   "id" : "starred",
-                  "text" : "Starred"
+                  "text" : "Starred",
+                  "icon" : "icon icon-star"
                 }
               ]
             },
             {
               "id" : "deleted-items",
-              "text" : "Deleted Items"
+              "text" : "Deleted Items",
+              "icon" : "icon icon-folder"
             },
             {
               "id" : "sent-items",
-              "text" : "Sent Items"
+              "text" : "Sent Items",
+              "icon" : "icon icon-attach"
             }
           ]
         },
         {
           "id" : "local-folders",
           "text" : "Local Folders",
+          "icon" : "icon icon-home",
           "state" : {
             opened : true
           },
           children : [
             {
               "id" : "local-trash",
-              "text" : "Trash"
+              "text" : "Trash",
+              "icon" : "icon icon-trash"
             },
             {
               "id" : "local-outbox",
-              "text" : "Outbox"
+              "text" : "Outbox",
+              "icon" : "icon icon-upload"
             }
           ]
         }
