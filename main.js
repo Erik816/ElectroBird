@@ -24,6 +24,7 @@ app.on('ready', function() {
   mainWindow = new BrowserWindow({
     width: 1200,
     height: 1000,
+    'always-on-top': false,
     // Needed for jQuery?
     //"web-preferences": {
       //"web-security": false
