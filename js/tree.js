@@ -11,7 +11,7 @@ $(document).ready(function () {
       "data" : [
         {
           "id" : "account",
-          "text" : "Erik.Christensen@gmail.com",
+          "text" : "Account",
           "icon" : "icon icon-inbox",
           "state" : {
             opened: true
