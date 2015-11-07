@@ -72,12 +72,27 @@
 
           </div>
 
-          <!-- Main email pane powered by jqGrid -->
-          <div class="pane container-fluid" id="email-pane">
-            <table class="table tablesorter" id="jqGrid"></table>
-            <div id="jqGridPager"></div>
-          </div>
+          <div class="pane">
+            <div class="pane-group-horizontal">
 
+              <!-- Main email pane powered by jqGrid -->
+              <div class="pane-horizontal container-fluid" id="email-pane">
+                <table class="table tablesorter" id="jqGrid"></table>
+                <div id="jqGridPager"></div>
+              </div>
+
+              <!-- Message details pane. TODO: Figure out why it's floating instead of displaying below email pane -->
+              <div class="pane-horizontal container-fluid" id="message-details">
+                <h3>Message details pane</h3>
+              </div>
+
+              <!-- Message view pane. TODO: Figure out why it's floating instead of displaying below email pane -->
+              <div class="pane-horizontal container-fluid" id="message-view">
+                <h3>Message view pane</h3>
+              </div>
+              
+            </div>
+          </div>
         </div>
       </div>
     </div>
