@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="css/photon.css">
     <link rel="stylesheet" type="text/css" href="jstree/dist/themes/default/style.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="jqGrid/css/ui.jqgrid.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="node_modules/jquery-ui/themes/smoothness/jquery-ui.css" />
 
     <!-- Javascript Libraries and Scripts-->
     <script>window.$ = window.jQuery = require('jquery');</script>
@@ -67,7 +68,7 @@
         <div class="pane-group">
           <div class="pane pane-sm sidebar">
 
-            <!-- Sidebar tree powered by tree.js script -->
+            <!-- Sidebar tree powered by jstree and loaded with tree.js script -->
             <div id="jstree"></div>
 
           </div>
@@ -75,22 +76,27 @@
           <div class="pane">
             <div class="pane-group-horizontal">
 
-              <!-- Main email pane powered by jqGrid -->
-              <div class="pane-horizontal container-fluid" id="email-pane">
+              <!-- Thread pane powered by jqGrid and loaded with jqGrid.js
+              TODO: fix space on bottom of pane;
+              scroll only in complete rows to avoid cutting at top of frame;
+              format date to match Thunderbird;
+              add ability to select additional columns/hidden columns;
+              display icons for attachments, stars, etc;-->
+              <div class="pane-horizontal container-fluid" id="thread-pane">
                 <table class="table tablesorter" id="jqGrid"></table>
                 <div id="jqGridPager"></div>
               </div>
 
-              <!-- Message details pane. TODO: Figure out why it's floating instead of displaying below email pane -->
-              <div class="pane-horizontal container-fluid" id="message-details">
-                <h3>Message details pane</h3>
+              <!-- Message headers pane -->
+              <div class="pane-horizontal container-fluid" id="message-headers">
+                <h3>Message headers pane</h3>
               </div>
 
-              <!-- Message view pane. TODO: Figure out why it's floating instead of displaying below email pane -->
-              <div class="pane-horizontal container-fluid" id="message-view">
-                <h3>Message view pane</h3>
+              <!-- Message pane -->
+              <div class="pane-horizontal container-fluid" id="message-pane">
+                <h3>Message pane</h3>
               </div>
-              
+
             </div>
           </div>
         </div>

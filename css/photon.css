@@ -670,7 +670,7 @@ textarea {
   border-left: 1px solid #ddd;
 }
 
-#message-details {
+#message-headers {
   background-color: #f5f5f4;
 }
 
@@ -2242,7 +2242,7 @@ table {
 }
 
 thead {
-  background-color: #f5f5f4;
+  background-color: #fff;
 }
 
 tbody {

@@ -31,10 +31,10 @@ $(document).ready(function () {
    */
 
   $(window).bind('resize', function () {
-    resizeGrid('#jqGrid', '#email-pane');
+    resizeGrid('#jqGrid', '#thread-pane');
   });
   $(window).bind('load', function () {
-    resizeGrid('#jqGrid', '#email-pane');
+    resizeGrid('#jqGrid', '#thread-pane');
   });
 
   /**This function resizes the width of jqGrid, makes jqGrid responsive
