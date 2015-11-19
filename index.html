@@ -15,7 +15,11 @@
     <script src="jqGrid/js/jquery.jqGrid.min.js"></script>
     <script src="jqGrid/js/i18n/grid.locale-en.js"></script>
 
-    </script>
+    <!-- Load Javascript -->
+    <script src="js/tree.js"></script>
+    <script src="jstree/dist/jstree.min.js"></script>
+    <script src="js/jqGrid.js"></script>
+    <script src="js/menu.js"></script>
 
   </head>
   <body>
@@ -25,11 +29,11 @@
       <header class="toolbar toolbar-header">
         <div class="toolbar-actions">
           <div class="btn-group">
-            <button class="btn btn-default  btn-dropdown" title="Get new messages">
+            <button class="btn btn-default btn-dropdown" title="Get new messages">
               <span class="icon icon-download"></span>
               <span class="icon-header-text">Get Messages</span>
             </button>
-            <button class="btn btn-default  btn-dropdown" title="Create a new message">
+            <button class="btn btn-default btn-dropdown" title="Create a new message">
               <span class="icon icon-pencil"></span>
               <span class="icon-header-text">Write</span>
             </button>
@@ -77,19 +81,61 @@
             <div class="pane-group-horizontal">
 
               <!-- Thread pane powered by jqGrid and loaded with jqGrid.js
-              TODO: fix space on bottom of pane;
-              scroll only in complete rows to avoid cutting at top of frame;
+              TODO: scroll only in complete rows to avoid cutting at top of frame;
               format date to match Thunderbird;
               add ability to select additional columns/hidden columns;
+              remove horizontal scroll bar;
               display icons for attachments, stars, etc;-->
               <div class="pane-horizontal container-fluid" id="thread-pane">
                 <table class="table tablesorter" id="jqGrid"></table>
-                <div id="jqGridPager"></div>
               </div>
 
               <!-- Message headers pane -->
               <div class="pane-horizontal container-fluid" id="message-headers">
-                <h3>Message headers pane</h3>
+                <div>
+                  <div class="btn-group pull-right">
+                    <button class="btn btn-mini btn-default" title="Reply to the sender of this message">
+                      <span class="icon icon-download"></span>
+                      <span class="icon-header-text">Reply</span>
+                    </button>
+                    <button class="btn btn-mini btn-default" title="Forward this message">
+                      <span class="icon icon-download"></span>
+                      <span class="icon-header-text">Forward</span>
+                    </button>
+                    <button class="btn btn-mini btn-default" title="Archive this message">
+                      <span class="icon icon-download"></span>
+                      <span class="icon-header-text">Archive</span>
+                    </button>
+                    <button class="btn btn-mini btn-default" title="Mark this message as junk">
+                      <span class="icon icon-download"></span>
+                      <span class="icon-header-text">Junk</span>
+                    </button>
+                    <button class="btn btn-mini btn-default" title="Delete this message">
+                      <span class="icon icon-download"></span>
+                      <span class="icon-header-text">Delete</span>
+                    </button>
+                    <button class="btn btn-mini btn-default btn-dropdown" title="More actions">
+                      <span class="icon icon-download"></span>
+                      <span class="icon-header-text">More</span>
+                    </button>
+                  </div>
+                  <div class="pull-left padded-top-less padded-horizontally-less">
+                    <div><span class="light-text">From</span>
+                      <span id="messageSender"></span>
+                      <span id="senderEmail"></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="nofloat padded-top-less padded-horizontally-less">
+                  <div><span class="light-text">Subject</span>
+                    <span id="Subject"></span>
+                  </div>
+                </div>
+                <div class="nofloat padded-top-less padded-horizontally-less">
+                  <div><span class="light-text">To</span>
+                    <span id="Recipient"></span>
+                  </div>
+                </div>
               </div>
 
               <!-- Message pane -->
@@ -102,14 +148,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Load Javascript -->
-    <script src="js/tree.js"></script>
-    <script src="jstree/dist/jstree.min.js"></script>
-    <script src="js/jqGrid.js"></script>
-
-    <!--Unclear if I need this menu script that came with Photon
-    <script src="js/menu.js"></script>-->
 
   </body>
 </html>

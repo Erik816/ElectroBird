@@ -210,6 +210,10 @@ h6 {
   -webkit-user-select: text;
 }
 
+.light-text {
+  color: #b3b3b3;
+}
+
 .text-center {
   text-align: center;
 }
@@ -294,6 +298,10 @@ h6 {
 
 .padded-bottom-more {
   padding-bottom: 20px;
+}
+
+.nofloat {
+  clear:both;
 }
 
 .sidebar {

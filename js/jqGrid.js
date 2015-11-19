@@ -12,15 +12,36 @@ $(document).ready(function () {
             { label: '<span class="icon icon-eye"></span>', name: 'Read', width: 10, resizable: true },
             { label: 'From', name: 'From', width: 60, resizable: true },
             { label: '<span class="icon icon-minus-circled"></span>', name: 'Spam', width: 10, resizable: true },
-            { label: 'Date', name: 'Date', width: 40, sorttype: 'datetime', datefmt: 'Y-m-d H:i:s', resizable: true }
+            { label: 'Date', name: 'Date', width: 40, sorttype: 'datetime', datefmt: 'Y-m-d H:i:s', resizable: true },
+            { name: 'Email', hidden: true},
+            { name: 'Recipient', hidden: true}
           ],
           autowidth: true,
           shrinktoFit: true,
           height: 300,
-          rowNum: 30,
           loadonce: true,
           scroll: 1,
-          pager: "#jqGridPager"
+          // Function to parse rowData when row is selected. Modifies index.html with jQuery calls to selected elements.
+          onSelectRow: function(id) {
+            var rowData = $(this).getRowData(id);
+            var messageSender = rowData['From'];
+            var senderEmail = rowData['Email'];
+            var subject = rowData['Subject'];
+            var recipientEmail = rowData['Recipient']
+
+            if (messageSender) {
+              $("#messageSender").html("<span>" + messageSender + "<span>");
+            };
+            if (senderEmail) {
+              $("#senderEmail").html("<span> &lt;" + senderEmail + "&gt; <span>");
+            };
+            if (subject) {
+              $("#Subject").html("<b><span> " + subject + "<span></b>");
+            };
+            if (recipientEmail) {
+              $("#Recipient").html("<span> " + recipientEmail + "<span>");
+            };
+          }
       });
   });
 
