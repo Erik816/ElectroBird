@@ -14,7 +14,8 @@ $(document).ready(function () {
             { label: '<span class="icon icon-minus-circled"></span>', name: 'Spam', width: 10, resizable: true },
             { label: 'Date', name: 'Date', width: 40, sorttype: 'datetime', datefmt: 'Y-m-d H:i:s', resizable: true },
             { name: 'Email', hidden: true},
-            { name: 'Recipient', hidden: true}
+            { name: 'Recipient', hidden: true},
+            { name: 'Text', hidden: true}
           ],
           autowidth: true,
           shrinktoFit: true,
@@ -27,19 +28,23 @@ $(document).ready(function () {
             var messageSender = rowData['From'];
             var senderEmail = rowData['Email'];
             var subject = rowData['Subject'];
-            var recipientEmail = rowData['Recipient']
+            var recipientEmail = rowData['Recipient'];
+            var messageContent = rowData['Text'];
 
             if (messageSender) {
-              $("#messageSender").html("<span>" + messageSender + "<span>");
+              $("#messageSender").html("<span>" + messageSender + "</span>");
             };
             if (senderEmail) {
-              $("#senderEmail").html("<span> &lt;" + senderEmail + "&gt; <span>");
+              $("#senderEmail").html("<span> &lt;" + senderEmail + "&gt; </span>");
             };
             if (subject) {
-              $("#Subject").html("<b><span> " + subject + "<span></b>");
+              $("#Subject").html("<b><span> " + subject + "</span></b>");
             };
             if (recipientEmail) {
-              $("#Recipient").html("<span> " + recipientEmail + "<span>");
+              $("#Recipient").html("<span> " + recipientEmail + "</span>");
+            };
+            if (messageContent) {
+              $('#messageContent').html("<span>" + messageContent + "</span>");
             };
           }
       });
