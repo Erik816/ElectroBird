@@ -10,12 +10,13 @@
     <link rel="stylesheet" type="text/css" media="screen" href="jqGrid/css/ui.jqgrid.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="node_modules/jquery-ui/themes/smoothness/jquery-ui.css" />
 
-    <!-- Javascript Libraries and Scripts-->
+    <!-- Javascript libraries-->
     <script>window.$ = window.jQuery = require('jquery');</script>
+    <script src="node_modules/jquery-ui/jquery-ui.js"></script>
     <script src="jqGrid/js/jquery.jqGrid.min.js"></script>
     <script src="jqGrid/js/i18n/grid.locale-en.js"></script>
 
-    <!-- Load Javascript -->
+    <!-- Load external Javascript files -->
     <script src="js/tree.js"></script>
     <script src="jstree/dist/jstree.min.js"></script>
     <script src="js/jqGrid.js"></script>
@@ -78,13 +79,14 @@
           </div>
 
           <div class="pane">
-            <div class="pane-group-horizontal">
+            <div class="pane-group-horizontal" id="main-pane">
 
               <!-- Thread pane powered by jqGrid and loaded with jqGrid.js
               TODO: scroll only in complete rows to avoid cutting at top of frame;
               format date to match Thunderbird;
               add ability to select additional columns/hidden columns;
               remove horizontal scroll bar;
+              make this element resizable;
               display icons for attachments, stars, etc;-->
               <div class="pane-horizontal container-fluid" id="thread-pane">
                 <table class="table tablesorter" id="jqGrid"></table>
@@ -96,27 +98,26 @@
                 <div>
                   <div class="btn-group pull-right">
                     <button class="btn btn-mini btn-default" title="Reply to the sender of this message">
-                      <span class="icon icon-download"></span>
+                      <span class="icon icon-reply"></span>
                       <span class="icon-header-text">Reply</span>
                     </button>
                     <button class="btn btn-mini btn-default" title="Forward this message">
-                      <span class="icon icon-download"></span>
+                      <span class="icon icon-right"></span>
                       <span class="icon-header-text">Forward</span>
                     </button>
                     <button class="btn btn-mini btn-default" title="Archive this message">
-                      <span class="icon icon-download"></span>
+                      <span class="icon icon-archive"></span>
                       <span class="icon-header-text">Archive</span>
                     </button>
                     <button class="btn btn-mini btn-default" title="Mark this message as junk">
-                      <span class="icon icon-download"></span>
+                      <span class="icon icon-minus-circled"></span>
                       <span class="icon-header-text">Junk</span>
                     </button>
                     <button class="btn btn-mini btn-default" title="Delete this message">
-                      <span class="icon icon-download"></span>
+                      <span class="icon icon-block"></span>
                       <span class="icon-header-text">Delete</span>
                     </button>
                     <button class="btn btn-mini btn-default btn-dropdown" title="More actions">
-                      <span class="icon icon-download"></span>
                       <span class="icon-header-text">More</span>
                     </button>
                   </div>
@@ -139,7 +140,8 @@
                 </div>
               </div>
 
-              <!-- Message pane -->
+              <!-- Message pane
+              TODO: adjust so scroll only affects this pane-->
               <div class="pane-horizontal container-fluid padded" id="message-pane">
                 <div id="messageContent"></div>
               </div>

@@ -200,7 +200,7 @@ h6 {
 
 .window-content {
   position: relative;
-  overflow-y: auto;
+  overflow-y: hidden;
   display: flex;
   flex: 1;
 }
@@ -659,7 +659,7 @@ textarea {
 
 .pane {
   position: relative;
-  overflow-y: auto;
+  overflow-y: hidden;
   flex: 1;
   border-left: 1px solid #ddd;
 }
@@ -674,12 +674,22 @@ textarea {
 
 .pane-horizontal {
   position: relative;
-  overflow-y: auto;
+  overflow-y: hidden;
   border-left: 1px solid #ddd;
+}
+
+#thread-pane {
+  height: 40%;
+  resize: vertical;
+  overflow-x: hidden;
 }
 
 #message-headers {
   background-color: #f5f5f4;
+}
+
+#message-pane {
+  overflow-y: auto !important;
 }
 
 .pane:first-child {

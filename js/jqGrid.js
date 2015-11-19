@@ -17,11 +17,13 @@ $(document).ready(function () {
             { name: 'Recipient', hidden: true},
             { name: 'Text', hidden: true}
           ],
-          autowidth: true,
+          autowidth: "100%",
           shrinktoFit: true,
-          height: 300,
+          // can I set height as a function to enable responsive height?
+          height: $('#thread-pane').height(),
           loadonce: true,
           scroll: 1,
+          scrollOffset: 0,
           // Function to parse rowData when row is selected. Modifies index.html with jQuery calls to selected elements.
           onSelectRow: function(id) {
             var rowData = $(this).getRowData(id);
@@ -50,29 +52,35 @@ $(document).ready(function () {
       });
   });
 
-  /**
-   * Binding function resizeGrid to resize and load event of window
-   *
-   * @author Shiva Bhusal
-   */
+/**
+ * Binding function resizeGrid to resize and load event of window
+ *
+ * @author Shiva Bhusal
+ */
 
-  $(window).bind('resize', function () {
-    resizeGrid('#jqGrid', '#thread-pane');
-  });
-  $(window).bind('load', function () {
-    resizeGrid('#jqGrid', '#thread-pane');
-  });
+$(window).bind('resize', function () {
+  resizeGrid('#jqGrid', '#thread-pane');
+});
+$(window).bind('load', function () {
+  resizeGrid('#jqGrid', '#thread-pane');
+});
 
-  /**This function resizes the width of jqGrid, makes jqGrid responsive
-  * @param responsiveParentId Id of parent that is responsive, by default it will take body
-  * @param idOfTable Id of the table that needs to be responsive
-  *
-  * @author Shiva Bhusal
-  */
+/**This function resizes the width of jqGrid, makes jqGrid responsive
+* @param responsiveParentId Id of parent that is responsive, by default it will take body
+* @param idOfTable Id of the table that needs to be responsive
+*
+* @author Shiva Bhusal
+*/
 
-  function resizeGrid(idOfTable, responsiveParentId) {
-     // pageWidth imports its width from responsiveParentId, Default parent is BODY
-     responsiveParentId = responsiveParentId || 'body';
-     var pageWidth = $(responsiveParentId).width();
-     $(idOfTable).setGridWidth(pageWidth);
-  }
+function resizeGrid(idOfTable, responsiveParentId) {
+   // pageWidth imports its width from responsiveParentId, Default parent is BODY
+   responsiveParentId = responsiveParentId || 'body';
+   var pageWidth = $(responsiveParentId).width();
+   $(idOfTable).setGridWidth(pageWidth);
+};
+
+//Attempt to get grid to resize based on size of containing div
+//$(document).ready(function () {
+//  $('#thread-pane').resizable();
+//  $('#jqGrid').jqGrid('setGridHeight', $('#thread-pane').height()-30);
+//});
