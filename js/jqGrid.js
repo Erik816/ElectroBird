@@ -64,9 +64,11 @@ $(document).ready(function () {
 
 $(window).bind('resize', function () {
   resizeGrid('#jqGrid', '#thread-pane');
+  messagePaneHeight();
 });
 $(window).bind('load', function () {
   resizeGrid('#jqGrid', '#thread-pane');
+  messagePaneHeight();
 });
 
 /**This function resizes the width of jqGrid, makes jqGrid responsive
@@ -81,6 +83,11 @@ function resizeGrid(idOfTable, responsiveParentId) {
    responsiveParentId = responsiveParentId || 'body';
    var pageWidth = $(responsiveParentId).width();
    $(idOfTable).setGridWidth(pageWidth);
-   // used to make height responsive when changing size of thread pane. Tacking -30 on the end as a hack to clear enough room on the bottom of the frame.
+   // used to make height responsive when changing size of thread pane. Tacking -30 (pixels) on the end as a hack to clear enough room on the bottom of the frame.
    $(idOfTable).jqGrid('setGridHeight', $('#thread-pane').innerHeight()-30);
 };
+
+function messagePaneHeight() {
+  var height = $('#main-pane').outerHeight() - $('#thread-pane').outerHeight(true) - $('#message-headers').outerHeight(true);
+  $('#message-pane').css({"max-height": height+"px"});
+}

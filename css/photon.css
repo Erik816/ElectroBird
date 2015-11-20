@@ -688,7 +688,8 @@ textarea {
 }
 
 #message-pane {
-  overflow-y: auto !important;
+  height: auto;
+  overflow-y: auto;
 }
 
 .pane:first-child {
