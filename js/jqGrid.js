@@ -17,7 +17,7 @@ $(document).ready(function () {
             { label: '<span class="icon icon-eye"></span>', name: 'Read', width: 10, resizable: true },
             { label: 'From', name: 'From', width: 60, resizable: true },
             { label: '<span class="icon icon-minus-circled"></span>', name: 'Spam', width: 10, resizable: true },
-            { label: 'Date', name: 'Date', width: 40, sorttype: 'datetime', datefmt: 'Y-m-d H:i:s', resizable: true },
+            { label: 'Date', name: 'Date', width: 40, sorttype: 'datetime', formatter: 'date', formatoptions: { srcformat: "ISO8601Long", newformat: "m/d/Y h:i A"}, resizable: true },
             { name: 'Email', hidden: true},
             { name: 'Recipient', hidden: true},
             { name: 'Text', hidden: true}
