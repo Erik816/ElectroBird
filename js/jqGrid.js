@@ -1,6 +1,11 @@
 // jqGrid.js controls the initialization and settings of the main email pane. It uses the jqGrid plugin for jQuery, which can be found at http://www.trirand.com/blog/. It is currently hard-coded to accept a dummy email JSON document, but can be configured to load from a server.
 
 $(document).ready(function () {
+
+    // To allow resizing the div that contains jqGrid
+    $('#thread-pane').resizable();
+
+    // jqGrid initialization and settings
     $("#jqGrid").jqGrid({
         url: 'data/dummyemails.json',
         datatype: "json",
@@ -19,7 +24,6 @@ $(document).ready(function () {
           ],
           autowidth: "100%",
           shrinktoFit: true,
-          // can I set height as a function to enable responsive height?
           height: $('#thread-pane').height(),
           loadonce: true,
           scroll: 1,
@@ -77,10 +81,6 @@ function resizeGrid(idOfTable, responsiveParentId) {
    responsiveParentId = responsiveParentId || 'body';
    var pageWidth = $(responsiveParentId).width();
    $(idOfTable).setGridWidth(pageWidth);
+   // used to make height responsive when changing size of thread pane. Tacking -30 on the end as a hack to clear enough room on the bottom of the frame.
+   $(idOfTable).jqGrid('setGridHeight', $('#thread-pane').innerHeight()-30);
 };
-
-//Attempt to get grid to resize based on size of containing div
-//$(document).ready(function () {
-//  $('#thread-pane').resizable();
-//  $('#jqGrid').jqGrid('setGridHeight', $('#thread-pane').height()-30);
-//});
